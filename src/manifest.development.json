@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "word-hunt",
+    "description": "A word lookup extension compatible with Chrome Manifest Version 3, featuring an intelligent word repository based on web categorization, encompassing translation, highlighting, and personalized learning capabilities.",
+    "version": "3",
+    "background": {
+        "service_worker": "/background.js"
+    },
+    "action": {
+        "default_title": "Click to view a popup",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "/content.js"
+            ],
+            "css": ["styles.css"],
+            "run_at": "document_idle"
+        }
+    ],
+      "host_permissions": [
+        "https://www.bing.com/*",
+        "<all_urls>"
+    ],
+      "permissions": [
+          "activeTab",
+          "storage",
+          "tabs",
+          "webRequest",
+          "webNavigation",
+          "management",
+          "scripting"
+      ]
+}

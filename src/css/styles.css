@@ -1,0 +1,5 @@
+.mark_highlight_yellow {
+	background-color: rgba(255, 255, 0, 0.4); 
+	display: inline;
+	border-bottom: 3px solid rgba(255, 255, 0, 0.9);
+}
